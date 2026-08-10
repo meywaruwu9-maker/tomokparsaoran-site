@@ -1,0 +1,103 @@
+/* =========================================================
+   DATA STRUKTUR ORGANISASI — Desa Tomok Parsaoran
+   =========================================================
+   Sumber: Laporan Hasil Wawancara Website Desa Tomok Parsaoran
+   + papan struktur resmi di Kantor Desa.
+
+   CARA MENAMBAHKAN FOTO PEJABAT:
+   1. Taruh file foto di assets/images/pemerintahan/ (JPG/WebP,
+      persegi/potret, di bawah ±400KB).
+   2. Isi field "foto" orang yang sesuai dengan path filenya,
+      misalnya: foto: "assets/images/pemerintahan/sekdes.jpg"
+   3. Simpan & refresh — foto otomatis muncul di bagan, tidak
+      perlu mengubah HTML sama sekali.
+
+   CARA MENAMBAH ORANG/KOTAK BARU (mis. ada Kadus IV):
+   Tambahkan satu baris objek baru { ... } ke array yang sesuai,
+   isi "parent" dengan id kotak yang jadi atasannya. Contoh:
+   { id: 'kadus4', parent: 'kades', jabatan: 'Kepala Dusun IV', nama: 'Nama Baru', foto: '' }
+   ========================================================= */
+
+// ===== PEMERINTAHAN DESA =====
+// "parent: null" menandai kotak paling atas (cuma boleh 1 per struktur)
+const strukturPemerintah = [
+  { id: 'kades', parent: null, jabatan: 'Pj. Kepala Desa', nama: 'Eva Erika Hutagalung', foto: 'assets/images/pemerintahan/eva.jpg' },
+  { id: 'sekdes', parent: 'kades', jabatan: 'Sekretaris Desa', nama: 'Asima Rotua H. Silalahi', foto: 'assets/images/pemerintahan/Ais.jpg' },
+  { id: 'kaur-umum', parent: 'sekdes', jabatan: 'Kaur Umum & Perencanaan', nama: 'Tumbur H. Sidabutar', foto: '' },
+  { id: 'kaur-keuangan', parent: 'sekdes', jabatan: 'Kaur Keuangan', nama: 'Anna Romince Sidabutar', foto: '' },
+  { id: 'kasi-pemerintahan', parent: 'kades', jabatan: 'Kasi Pemerintahan', nama: 'Edisma Simbolon', foto: 'assets/images/pemerintahan/Edis.jpg' },
+  { id: 'kasi-kesejahteraan', parent: 'kades', jabatan: 'Kasi Kesejahteraan & Pelayanan', nama: 'Santika P. Sitinjak', foto: 'assets/images/pemerintahan/santi.jpg' },
+  { id: 'kadus1', parent: 'kades', jabatan: 'Kepala Dusun I', nama: 'Ober J. Siahaan', foto: 'assets/images/pemerintahan/Obe.jpg' },
+  { id: 'kadus2', parent: 'kades', jabatan: 'Kepala Dusun II', nama: 'Jonni Tamba', foto: 'assets/images/pemerintahan/jon.jpg' },
+  { id: 'kadus3', parent: 'kades', jabatan: 'Kepala Dusun III', nama: 'Togar P. Sitanggang', foto: '' }
+];
+
+// ===== BPD (Badan Permusyawaratan Desa) =====
+// "pasangan" dipakai kalau 2 jabatan digabung dalam 1 kotak (Ketua + Wakil Ketua)
+const strukturBPD = [
+  {
+    id: 'ketua-bpd', parent: null, jabatan: 'Ketua', nama: 'Hongli Hamonangan Sidabutar', foto: '',
+    pasangan: { jabatan: 'Wakil Ketua', nama: 'Rita Junely Sinurat', foto: '' }
+  },
+  { id: 'sekretaris-bpd', parent: 'ketua-bpd', jabatan: 'Sekretaris', nama: 'Lando Harianja', foto: '' },
+  { id: 'anggota-bpd', parent: 'ketua-bpd', jabatan: 'Anggota', nama: '', foto: '' },
+  { id: 'anggota-bpd-1', parent: 'anggota-bpd', jabatan: '', nama: 'Maraden Sitanggang', foto: '' },
+  { id: 'anggota-bpd-2', parent: 'anggota-bpd', jabatan: '', nama: 'Demson Samosir', foto: '' },
+  { id: 'anggota-bpd-3', parent: 'anggota-bpd', jabatan: '', nama: 'Kamron Simbolon', foto: '' },
+  { id: 'anggota-bpd-4', parent: 'anggota-bpd', jabatan: '', nama: 'Paudi Jekson Sidabutar', foto: '' }
+];
+
+// ===== TP PKK =====
+const strukturPKK = [
+  {
+    id: 'ketua-pkk', parent: null, jabatan: 'Ketua', nama: 'Ny. Katarina H. Sidabutar', foto: '',
+    pasangan: { jabatan: 'Wakil Ketua', nama: 'Rosinda Sinaga', foto: '' }
+  },
+  { id: 'penasehat-pkk', parent: 'ketua-pkk', jabatan: 'Penasehat', nama: 'Pj. Kepala Desa', foto: '' },
+  { id: 'pembina-pkk', parent: 'ketua-pkk', jabatan: 'Dewan Pembina', nama: 'Pj. Kepala Desa Tomok Parsaoran', foto: '' },
+  { id: 'sekretaris-pkk', parent: 'ketua-pkk', jabatan: 'Sekretaris', nama: 'Arnita Silalahi', foto: '' },
+  { id: 'bendahara-pkk', parent: 'ketua-pkk', jabatan: 'Bendahara', nama: 'Jusmawati Silalahi', foto: '' }
+];
+
+// ===== POKJA (Kelompok Kerja TP PKK) =====
+// Bentuknya beda (ketua + daftar anggota rata), jadi dipisah dari bagan pohon di atas.
+// ketuaFoto/foto per anggota juga opsional, isi kalau ada.
+const pokjaData = [
+  {
+    nama: 'POKJA I', ketua: 'Rumondang Sidabutar', ketuaFoto: '',
+    anggota: [
+      { nama: 'Roslina Manurung', foto: '' },
+      { nama: 'Erni Nainggolan', foto: '' },
+      { nama: 'Netti Tarigan', foto: '' },
+      { nama: 'Asima Rotua H. Silalahi', foto: '' }
+    ]
+  },
+  {
+    nama: 'POKJA II', ketua: 'Rusinda Sigiro', ketuaFoto: '',
+    anggota: [
+      { nama: 'Nursawati Sinaga', foto: '' },
+      { nama: 'Marintansia Sidabutar', foto: '' },
+      { nama: 'Jenni Sinaga', foto: '' },
+      { nama: 'Labora Sitinjak', foto: '' }
+    ]
+  },
+  {
+    nama: 'POKJA III', ketua: 'Santika Sitinjak', ketuaFoto: '',
+    anggota: [
+      { nama: 'Norita Tuhumuri', foto: '' },
+      { nama: 'Ermauli Situmorang', foto: '' },
+      { nama: 'Romanti Tanjung', foto: '' },
+      { nama: 'Hetti Sidabutar', foto: '' }
+    ]
+  },
+  {
+    nama: 'POKJA IV', ketua: 'Nurhayati', ketuaFoto: '',
+    anggota: [
+      { nama: 'Rumedi Simanjuntak', foto: '' },
+      { nama: 'Herlina Nainggolan', foto: '' },
+      { nama: 'Rediana Situmorang', foto: '' },
+      { nama: 'Anna Sidabutar', foto: '' }
+    ]
+      },
+
+];

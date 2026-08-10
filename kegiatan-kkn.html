@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kegiatan Mahasiswa KKN — Desa Tomok Parsaoran</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/tema-data.js"></script>
+  <script src="js/tema.js"></script>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-name">Desa <em>Tomok Parsaoran</em></span>
+        <span class="brand-sub">Kec. Simanindo &middot; Kab. Samosir</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Beranda</a>
+        <a href="profil.html">Profil</a>
+        <a href="struktur.html">Struktur Desa</a>
+        <a href="wisata.html">Wisata</a>
+        <a href="pemandangan.html">Spot Foto</a>
+        <a href="berita.html">Berita</a>
+        <a href="umkm.html">UMKM</a>
+        <a href="homestay.html">Homestay</a>
+        <a href="kegiatan-kkn.html" class="active">Kegiatan KKN</a>
+        <a href="saran.html">Saran</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="berita" id="kegiatan-kkn">
+      <div class="container">
+        <p class="eyebrow">Dokumentasi Mahasiswa</p>
+        <h1 class="section-title">Kegiatan Mahasiswa KKN di Desa</h1>
+        <p class="section-lead">Rangkaian program dan kegiatan yang dijalankan mahasiswa KKN selama mengabdi di Desa Tomok Parsaoran.</p>
+        <div class="kegiatan-filter-bar">
+          <button type="button" class="filter-btn kegiatan-filter-btn active" data-filter="Kelompok 1">Kelompok 1</button>
+          <button type="button" class="filter-btn kegiatan-filter-btn" data-filter="Kelompok 2">Kelompok 2</button>
+          <p id="kegiatanFilterInfo" class="kegiatan-filter-info">Menampilkan kegiatan Kelompok 1.</p>
+        </div>
+        <div class="berita-grid" id="kegiatanGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="kegiatanGalleryModal" class="gallery-modal" hidden aria-hidden="true">
+    <div class="gallery-backdrop" data-close="true"></div>
+    <div class="gallery-dialog" role="dialog" aria-modal="true" aria-labelledby="kegiatanGalleryTitle">
+      <button type="button" class="gallery-close" data-close="true" aria-label="Tutup galeri">×</button>
+      <div class="gallery-header">
+        <h2 id="kegiatanGalleryTitle" class="gallery-title"></h2>
+        <p class="gallery-note">Klik di luar area untuk menutup.</p>
+      </div>
+      <div class="gallery-images"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <img src="assets/images/logo samosir.png" alt="Logo Kabupaten Samosir" class="footer-logo">
+        <span class="brand-name">Desa <em>Tomok Parsaoran</em></span>
+        <p>Tomok Parsaoran, Kec. Simanindo<br>Kab. Samosir, Sumut, 22395</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pemerintah Desa</h4>
+        <p>Pj. Kades Tomok Parsaoran: Eva Erika Hutagalung</p>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak Darurat</h4>
+        <p>Call Center POLRES (110)</p>
+      </div>
+      <div class="footer-col">
+        <h4>Jelajahi</h4>
+        <p><a href="https://samosirkab.go.id/" target="_blank" rel="noopener">Kab. Samosir</a></p>
+      </div>
+      <div class="footer-col footer-unimed">
+        <img src="assets/images/LOGO KAMPUS.png" alt="Logo Kampus" class="footer-logo footer-logo--unimed">
+        <span class="brand-name">KKN <em>Tomok Parsaoran</em></span>
+        <p class="footer-unimed-text"><strong>KELOMPOK 1 &amp; 2</strong></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Desa Tomok Parsaoran</p>
+    </div>
+  </footer>
+  <script src="js/lokasi-data.js"></script>
+  <script src="js/struktur-data.js"></script>
+  <script src="js/berita-data.js"></script>
+  <script src="js/kegiatan-data.js"></script>
+  <script src="js/profil-data.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/sheets-sync.js"></script>
+  <script src="js/firebase-sync.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

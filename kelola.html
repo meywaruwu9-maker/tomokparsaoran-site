@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow">
+  <title>Kelola Konten — Desa Tomok</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/tema-data.js"></script>
+  <script src="js/tema.js"></script>
+</head>
+<body class="kelola-body">
+
+  <!-- ===== GERBANG LOGIN ===== -->
+  <div id="gateOverlay" class="kelola-gate">
+    <div class="kelola-gate-box">
+      <span class="brand-name" style="display:block; margin-bottom:20px;">Kelola Konten <em>Desa Tomok</em></span>
+
+      <p id="gateLoading">Memeriksa status login…</p>
+
+      <div id="gateBelumSetup" hidden>
+        <p>Login online belum disetel untuk website ini. Lihat <code>PANDUAN-FIREBASE.md</code> untuk mengaktifkannya (gratis, sekali setup).</p>
+        <button type="button" id="btnModeOffline" class="hero-cta hero-cta--dark" style="width:100%;">Lanjut pakai mode offline (unduh file manual)</button>
+      </div>
+
+      <form id="formLogin" hidden>
+        <label>Email
+          <input type="email" id="loginEmail" required autocomplete="username">
+        </label>
+        <label>Kata Sandi
+          <input type="password" id="loginPassword" required autocomplete="current-password">
+        </label>
+        <p id="loginError" class="kelola-gate-error" hidden></p>
+        <button type="submit" class="hero-cta" style="width:100%;">Masuk</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="appContent" hidden>
+  <header class="kelola-header">
+    <div class="container kelola-header-inner">
+      <a href="index.html" class="kelola-back">&larr; Kembali ke Website</a>
+      <span class="brand-name">Kelola Konten <em>Desa Tomok</em></span>
+      <span id="statusLogin" class="kelola-status-login"></span>
+    </div>
+  </header>
+
+  <main class="kelola-main">
+    <div class="container">
+
+      <div class="kelola-intro">
+      
+      </div>
+
+      <nav class="kelola-tabs">
+        <button class="kelola-tab" data-panel="panel-wisata">Wisata</button>
+        <button class="kelola-tab active" data-panel="panel-profil">Profil Desa</button>
+        <button class="kelola-tab" data-panel="panel-umkm">UMKM</button>
+        <button class="kelola-tab" data-panel="panel-homestay">Homestay</button>
+        <button class="kelola-tab" data-panel="panel-pemandangan">Pemandangan</button>
+        <button class="kelola-tab" data-panel="panel-berita">Berita</button>
+        <button class="kelola-tab" data-panel="panel-kegiatan">Kegiatan KKN</button>
+        <button class="kelola-tab" data-panel="panel-tampilan">🎨 Tampilan</button>
+        <button class="kelola-tab" data-panel="panel-pemerintah">Pemerintahan Desa</button>
+        <button class="kelola-tab" data-panel="panel-bpd">BPD</button>
+        <button class="kelola-tab" data-panel="panel-pkk">TP PKK</button>
+      </nav>
+
+      <!-- ===== PROFIL DESA ===== -->
+      <section class="kelola-panel" id="panel-profil">
+        <p class="field-help">Ini konten halaman <code>profil.html</code> — statistik, sejarah, demografi, batas wilayah, dan info Kepala Desa. Cuma 1 set data (bukan daftar berulang).</p>
+
+        <div class="edit-card">
+          <div class="edit-card-head"><strong>Statistik</strong></div>
+          <div class="edit-row-split">
+            <label>Luas Wilayah <input type="text" id="pf-luasWilayah" placeholder="720 Ha"></label>
+            <label>Jumlah Dusun <input type="text" id="pf-jumlahDusun" placeholder="3"></label>
+          </div>
+          <div class="edit-row-split">
+            <label>Jumlah Jiwa <input type="text" id="pf-jumlahJiwa" placeholder="1.667"></label>
+            <label>Jumlah KK <input type="text" id="pf-jumlahKK" placeholder="446"></label>
+          </div>
+        </div>
+
+        <div class="edit-card">
+          <div class="edit-card-head"><strong>Sejarah</strong></div>
+          <label>Judul <input type="text" id="pf-sejarahJudul"></label>
+          <label>Isi (boleh pakai &lt;strong&gt;/&lt;em&gt; untuk tebal/miring) <textarea id="pf-sejarahTeks" rows="4"></textarea></label>
+        </div>
+
+        <div class="edit-card">
+          <div class="edit-card-head"><strong>Demografi</strong></div>
+          <label>Judul <input type="text" id="pf-demografiJudul"></label>
+          <label>Isi <textarea id="pf-demografiTeks" rows="4"></textarea></label>
+        </div>
+
+        <div class="edit-card">
+          <div class="edit-card-head"><strong>Lencana Pencapaian</strong></div>
+          <label>Teks (boleh pakai &lt;strong&gt;) <textarea id="pf-badge" rows="2"></textarea></label>
+        </div>
+
+        <div class="edit-card">
+          <div class="edit-card-head"><strong>Batas Wilayah</strong></div>
+          <div class="edit-row-split">
+            <label>Utara <input type="text" id="pf-batasUtara"></label>
+            <label>Selatan <input type="text" id="pf-batasSelatan"></label>
+          </div>
+          <div class="edit-row-split">
+            <label>Barat <input type="text" id="pf-batasBarat"></label>
+            <label>Timur <input type="text" id="pf-batasTimur"></label>
+          </div>
+        </div>
+
+        <div class="edit-card">
+          <div class="edit-card-head"><strong>Infrastruktur &amp; Kepala Desa</strong></div>
+          <label>Judul <input type="text" id="pf-infrastrukturJudul"></label>
+          <label>Nama Pj. Kepala Desa <input type="text" id="pf-kepalaDesaNama"></label>
+          <label>Kalimat tambahan (opsional) <textarea id="pf-infrastrukturTeksTambahan" rows="2"></textarea></label>
+        </div>
+
+        <div class="kelola-unduh-tombol">
+          <button type="button" id="btnSimpanProfilLive" class="hero-cta">Simpan Profil</button>
+          <button type="button" id="btnUnduhProfil" class="hero-cta hero-cta--dark">Unduh profil-data.js (mode offline)</button>
+        </div>
+        <p id="statusProfil" class="field-help"></p>
+      </section>
+
+      <!-- ===== WISATA ===== -->
+      <section class="kelola-panel" id="panel-wisata" hidden>
+        <div class="lokasi-grid" id="grid-wisata"></div>
+        <button type="button" class="btn-tambah" data-action="tambah-lokasi" data-kategori="wisata">+ Tambah Wisata Baru</button>
+      </section>
+
+      <!-- ===== UMKM ===== -->
+      <section class="kelola-panel" id="panel-umkm" hidden>
+        <div class="lokasi-grid" id="grid-umkm"></div>
+        <button type="button" class="btn-tambah" data-action="tambah-lokasi" data-kategori="umkm">+ Tambah UMKM Baru</button>
+      </section>
+
+      <!-- ===== HOMESTAY ===== -->
+      <section class="kelola-panel" id="panel-homestay" hidden>
+        <div class="lokasi-grid" id="grid-homestay"></div>
+        <button type="button" class="btn-tambah" data-action="tambah-lokasi" data-kategori="homestay">+ Tambah Homestay Baru</button>
+      </section>
+
+      <!-- ===== PEMANDANGAN ===== -->
+      <section class="kelola-panel" id="panel-pemandangan" hidden>
+        <div class="lokasi-grid" id="grid-pemandangan"></div>
+        <button type="button" class="btn-tambah" data-action="tambah-lokasi" data-kategori="pemandangan">+ Tambah Spot Pemandangan Baru</button>
+      </section>
+
+      <!-- ===== BERITA ===== -->
+      <section class="kelola-panel" id="panel-berita" hidden>
+        <div class="berita-admin-grid" id="grid-berita"></div>
+        <button type="button" class="btn-tambah" data-action="tambah-berita">+ Tulis Berita Baru</button>
+      </section>
+
+      <!-- ===== KEGIATAN KKN ===== -->
+      <section class="kelola-panel" id="panel-kegiatan" hidden>
+        <div class="berita-admin-grid" id="grid-kegiatan"></div>
+        <button type="button" class="btn-tambah" data-action="tambah-kegiatan">+ Tambah Kegiatan Baru</button>
+      </section>
+
+      <!-- ===== TAMPILAN (TEMA WARNA) ===== -->
+      <section class="kelola-panel kelola-panel--lebar" id="panel-tampilan" hidden>
+        <p class="field-help">Warna di sini berlaku untuk <strong>website utama & halaman ini</strong>. Pilih salah satu paket warna, atau atur sendiri di bagian "Warna Kustom" di bawah.</p>
+
+        <div class="tema-preset-grid" id="temaPresetGrid"></div>
+
+        <h3 class="kelola-subtitle">Warna Kustom (opsional)</h3>
+        <p class="field-help">Isi kelima warna di bawah untuk memakai paduan sendiri (menimpa paket di atas).</p>
+        <div class="tema-custom-grid" id="temaCustomGrid"></div>
+
+        <div class="tema-preview" id="temaPreview">
+          <div class="tema-preview-navy">
+            <span class="tema-preview-gold">Contoh judul besar</span>
+            <span class="tema-preview-tombol">Tombol</span>
+          </div>
+          <div class="tema-preview-sand">
+            <span class="tema-preview-red">Label / Aksen</span>
+            <p>Contoh teks isi paragraf di atas warna latar terang.</p>
+          </div>
+        </div>
+
+        <div class="kelola-unduh-tombol" style="margin-top:20px;">
+          <button type="button" id="btnSimpanTema" class="hero-cta">Simpan Tampilan</button>
+          <button type="button" id="btnResetTema" class="btn-tambah-kecil">Reset ke Default</button>
+        </div>
+        <p id="statusTema" class="field-help"></p>
+      </section>
+
+      <!-- ===== PEMERINTAHAN DESA ===== -->
+      <section class="kelola-panel" id="panel-pemerintah" hidden>
+        <p class="field-help">Ubah jabatan/nama/foto di bawah. Kotak tersusun sesuai bagan di website (atasan → bawahan).</p>
+        <div class="struktur-grid" id="grid-pemerintah" data-struktur="pemerintah"></div>
+        <div class="tambah-orang-box">
+          <label>Bawahan dari
+            <select id="atasan-pemerintah"></select>
+          </label>
+          <button type="button" class="btn-tambah" data-action="tambah-orang" data-struktur="pemerintah">+ Tambah Orang Baru</button>
+        </div>
+      </section>
+
+      <!-- ===== BPD ===== -->
+      <section class="kelola-panel" id="panel-bpd" hidden>
+        <p class="field-help">Ubah jabatan/nama/foto di bawah. Kotak tersusun sesuai bagan di website (atasan → bawahan).</p>
+        <div class="struktur-grid" id="grid-bpd" data-struktur="bpd"></div>
+        <div class="tambah-orang-box">
+          <label>Bawahan dari
+            <select id="atasan-bpd"></select>
+          </label>
+          <button type="button" class="btn-tambah" data-action="tambah-orang" data-struktur="bpd">+ Tambah Orang Baru</button>
+        </div>
+      </section>
+
+      <!-- ===== TP PKK ===== -->
+      <section class="kelola-panel" id="panel-pkk" hidden>
+        <p class="field-help">Ubah jabatan/nama/foto pengurus inti di bawah. Untuk anggota POKJA, lihat kartu POKJA di bawahnya.</p>
+        <div class="struktur-grid" id="grid-pkk" data-struktur="pkk"></div>
+        <div class="tambah-orang-box">
+          <label>Bawahan dari
+            <select id="atasan-pkk"></select>
+          </label>
+          <button type="button" class="btn-tambah" data-action="tambah-orang" data-struktur="pkk">+ Tambah Orang Baru</button>
+        </div>
+
+        <h3 class="kelola-subtitle">Kelompok Kerja (POKJA)</h3>
+        <div class="lokasi-grid" id="grid-pokja"></div>
+      </section>
+
+      <div class="kelola-unduh kelola-unduh--live" id="blokSimpanLive" hidden>
+        <h2>☁️ Simpan Perubahan ke Website</h2>
+        <p class="field-help" style="color:rgba(255,255,255,.75);">Perubahan langsung tampil di website begitu disimpan — tidak perlu unduh file atau buka GitHub.</p>
+        <div class="kelola-unduh-tombol">
+          <button type="button" id="btnSimpanLokasiLive" class="hero-cta">Simpan Wisata/UMKM/Homestay/Pemandangan</button>
+          <button type="button" id="btnSimpanStrukturLive" class="hero-cta hero-cta--dark">Simpan Struktur Organisasi</button>
+          <button type="button" id="btnSimpanBeritaLive" class="hero-cta hero-cta--dark">Simpan Berita</button>
+          <button type="button" id="btnSimpanKegiatanLive" class="hero-cta hero-cta--dark">Simpan Kegiatan KKN</button>
+        </div>
+        <p id="statusSimpanLive" class="field-help"></p>
+      </div>
+
+      <!-- ===== UNDUH (mode offline / cadangan) ===== -->
+      <div class="kelola-unduh" id="blokUnduhOffline">
+        <h2>Cadangan: unduh sebagai file (mode offline)</h2>
+        <div class="kelola-unduh-tombol">
+          <button type="button" id="btnUnduhLokasi" class="hero-cta">Unduh lokasi-data.js</button>
+          <button type="button" id="btnUnduhStruktur" class="hero-cta hero-cta--dark">Unduh struktur-data.js</button>
+          <button type="button" id="btnUnduhBerita" class="hero-cta hero-cta--dark">Unduh berita-data.js</button>
+          <button type="button" id="btnUnduhKegiatan" class="hero-cta hero-cta--dark">Unduh kegiatan-data.js</button>
+        </div>
+        <ol class="kelola-langkah">
+          <li>Buka repo GitHub website ini lewat browser (bukan aplikasi, lewat github.com).</li>
+          <li>Masuk ke folder <code>js</code>, klik file yang mau diganti.</li>
+          <li>Klik ikon pensil (Edit), hapus isinya, tempel isi file hasil unduhan (buka pakai Notepad/TextEdit, salin semua isinya).</li>
+          <li>Scroll ke bawah, klik tombol hijau <strong>"Commit changes"</strong>. Situs otomatis ter-update dalam 1-2 menit.</li>
+        </ol>
+        <p class="field-help">Kalau ada foto baru: masuk ke folder <code>assets/images/...</code> yang sesuai, klik "Add file" → "Upload files", seret foto ke sana, lalu Commit changes juga.</p>
+      </div>
+    </div>
+  </main>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-storage-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/lokasi-data.js"></script>
+  <script src="js/struktur-data.js"></script>
+  <script src="js/berita-data.js"></script>
+  <script src="js/kegiatan-data.js"></script>
+  <script src="js/profil-data.js"></script>
+  <script src="js/kelola.js"></script>
+  <script src="js/kelola-tema.js"></script>
+  <script src="js/kelola-firebase.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+backend:
+  name: github
+  repo: "USERNAME/REPO"
+  branch: "main"
+  auth_scope: "repo"
+  open_authoring: false
+  use_graphql: false
+  local_backend: true
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "lokasi"
+    label: "Data Lokasi"
+    files:
+      - name: "lokasi-data"
+        label: "Lokasi"
+        file: "data/lokasi.json"
+        format: json
+        fields:
+          - label: "Wisata"
+            name: "wisata"
+            widget: list
+            summary: "{{fields.nama}}"
+            fields:
+              - { label: "Nama", name: "nama", widget: "string" }
+              - { label: "Latitude", name: "lat", widget: "number" }
+              - { label: "Longitude", name: "lng", widget: "number" }
+              - { label: "Alamat", name: "alamat", widget: "string" }
+              - { label: "Deskripsi", name: "deskripsi", widget: "text" }
+              - label: "Foto"
+                name: "foto"
+                widget: list
+                field: { label: "URL Foto", name: "foto", widget: "string" }
+              - { label: "Rating", name: "rating", widget: "number", min: 0, max: 5, value_type: "float" }
+              - { label: "Google Maps Place ID", name: "placeId", widget: "string" }
+          - label: "UMKM"
+            name: "umkm"
+            widget: list
+            summary: "{{fields.nama}}"
+            fields:
+              - { label: "Nama", name: "nama", widget: "string" }
+              - { label: "Latitude", name: "lat", widget: "number" }
+              - { label: "Longitude", name: "lng", widget: "number" }
+              - { label: "Alamat", name: "alamat", widget: "string" }
+              - { label: "Deskripsi", name: "deskripsi", widget: "text" }
+              - { label: "Kontak", name: "kontak", widget: "string", required: false }
+              - label: "Foto"
+                name: "foto"
+                widget: list
+                field: { label: "URL Foto", name: "foto", widget: "string" }
+              - { label: "Rating", name: "rating", widget: "number", min: 0, max: 5, value_type: "float" }
+              - { label: "Google Maps Place ID", name: "placeId", widget: "string" }
+          - label: "Pemandangan"
+            name: "pemandangan"
+            widget: list
+            summary: "{{fields.nama}}"
+            fields:
+              - { label: "Nama", name: "nama", widget: "string" }
+              - { label: "Latitude", name: "lat", widget: "number" }
+              - { label: "Longitude", name: "lng", widget: "number" }
+              - { label: "Alamat", name: "alamat", widget: "string" }
+              - { label: "Deskripsi", name: "deskripsi", widget: "text" }
+              - label: "Foto"
+                name: "foto"
+                widget: list
+                field: { label: "URL Foto", name: "foto", widget: "string" }
+              - { label: "Rating", name: "rating", widget: "number", min: 0, max: 5, value_type: "float" }
+              - { label: "Google Maps Place ID", name: "placeId", widget: "string" }
+          - label: "Homestay"
+            name: "homestay"
+            widget: list
+            summary: "{{fields.nama}}"
+            fields:
+              - { label: "Nama", name: "nama", widget: "string" }
+              - { label: "Latitude", name: "lat", widget: "number" }
+              - { label: "Longitude", name: "lng", widget: "number" }
+              - { label: "Alamat", name: "alamat", widget: "string" }
+              - { label: "Deskripsi", name: "deskripsi", widget: "text" }
+              - { label: "Kontak", name: "kontak", widget: "string", required: false }
+              - label: "Foto"
+                name: "foto"
+                widget: list
+                field: { label: "URL Foto", name: "foto", widget: "string" }
+              - { label: "Rating", name: "rating", widget: "number", min: 0, max: 5, value_type: "float" }
+              - { label: "Google Maps Place ID", name: "placeId", widget: "string" }
+  - name: "struktur"
+    label: "Struktur Organisasi"
+    files:
+      - name: "struktur-data"
+        label: "Struktur"
+        file: "data/struktur.json"
+        format: json
+        fields:
+          - label: "Pemerintahan Desa"
+            name: "strukturPemerintah"
+            widget: list
+            summary: "{{fields.jabatan}} — {{fields.nama}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Parent", name: "parent", widget: "string", required: false }
+              - { label: "Jabatan", name: "jabatan", widget: "string" }
+              - { label: "Nama", name: "nama", widget: "string" }
+              - { label: "Foto", name: "foto", widget: "string", required: false }
+          - label: "BPD"
+            name: "strukturBPD"
+            widget: list
+            summary: "{{fields.jabatan}} — {{fields.nama}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Parent", name: "parent", widget: "string", required: false }
+              - { label: "Jabatan", name: "jabatan", widget: "string" }
+              - { label: "Nama", name: "nama", widget: "string" }
+              - { label: "Foto", name: "foto", widget: "string", required: false }
+              - label: "Pasangan"
+                name: "pasangan"
+                widget: object
+                required: false
+                fields:
+                  - { label: "Jabatan Pasangan", name: "jabatan", widget: "string", required: false }
+                  - { label: "Nama Pasangan", name: "nama", widget: "string", required: false }
+                  - { label: "Foto Pasangan", name: "foto", widget: "string", required: false }
+          - label: "TP PKK"
+            name: "strukturPKK"
+            widget: list
+            summary: "{{fields.jabatan}} — {{fields.nama}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Parent", name: "parent", widget: "string", required: false }
+              - { label: "Jabatan", name: "jabatan", widget: "string" }
+              - { label: "Nama", name: "nama", widget: "string" }
+              - { label: "Foto", name: "foto", widget: "string", required: false }
+              - label: "Pasangan"
+                name: "pasangan"
+                widget: object
+                required: false
+                fields:
+                  - { label: "Jabatan Pasangan", name: "jabatan", widget: "string", required: false }
+                  - { label: "Nama Pasangan", name: "nama", widget: "string", required: false }
+                  - { label: "Foto Pasangan", name: "foto", widget: "string", required: false }
+          - label: "POKJA"
+            name: "pokjaData"
+            widget: list
+            summary: "{{fields.nama}}"
+            fields:
+              - { label: "Nama Kelompok", name: "nama", widget: "string" }
+              - { label: "Ketua", name: "ketua", widget: "string" }
+              - { label: "Foto Ketua", name: "ketuaFoto", widget: "string", required: false }
+              - label: "Anggota"
+                name: "anggota"
+                widget: list
+                summary: "{{fields.nama}}"
+                fields:
+                  - { label: "Nama Anggota", name: "nama", widget: "string" }
+                  - { label: "Foto Anggota", name: "foto", widget: "string", required: false }
+  - name: "berita"
+    label: "Berita"
+    files:
+      - name: "berita-data"
+        label: "Berita"
+        file: "data/berita.json"
+        format: json
+        fields:
+          - label: "Berita"
+            name: "beritaData"
+            widget: list
+            summary: "{{fields.judul}}"
+            fields:
+              - { label: "Judul", name: "judul", widget: "string" }
+              - { label: "Ringkasan", name: "ringkasan", widget: "text" }
+              - { label: "Isi", name: "isi", widget: "text" }
+              - { label: "Foto", name: "foto", widget: "string", required: false }
+              - { label: "Tautan Eksternal", name: "link", widget: "string", required: false }
+              - { label: "Tanggal", name: "tanggal", widget: "string", required: false }
+              - { label: "Terbit", name: "terbit", widget: "boolean", default: true }
+  - name: "kegiatan"
+    label: "Kegiatan KKN"
+    files:
+      - name: "kegiatan-data"
+        label: "Kegiatan"
+        file: "data/kegiatan.json"
+        format: json
+        fields:
+          - label: "Kegiatan"
+            name: "kegiatanData"
+            widget: list
+            summary: "{{fields.judul}}"
+            fields:
+              - { label: "Judul", name: "judul", widget: "string" }
+              - { label: "Kategori", name: "kategori", widget: "string", required: false }
+              - { label: "Kelompok", name: "kelompok", widget: "string", required: false }
+              - { label: "Deskripsi", name: "deskripsi", widget: "text" }
+              - label: "Foto"
+                name: "foto"
+                widget: list
+                field: { label: "URL Foto", name: "foto", widget: "string" }
+              - { label: "Tanggal", name: "tanggal", widget: "string", required: false }
+              - { label: "Terbit", name: "terbit", widget: "boolean", default: true }
+  - name: "profil"
+    label: "Profil Desa"
+    files:
+      - name: "profil-data"
+        label: "Profil Desa"
+        file: "data/profil.json"
+        format: json
+        fields:
+          - { label: "Luas Wilayah", name: "luasWilayah", widget: "string" }
+          - { label: "Jumlah Dusun", name: "jumlahDusun", widget: "string" }
+          - { label: "Jumlah Jiwa", name: "jumlahJiwa", widget: "string" }
+          - { label: "Jumlah KK", name: "jumlahKK", widget: "string" }
+          - { label: "Judul Sejarah", name: "sejarahJudul", widget: "string" }
+          - { label: "Teks Sejarah", name: "sejarahTeks", widget: "text" }
+          - { label: "Judul Demografi", name: "demografiJudul", widget: "string" }
+          - { label: "Teks Demografi", name: "demografiTeks", widget: "text" }
+          - { label: "Badge", name: "badge", widget: "text" }
+          - { label: "Batas Utara", name: "batasUtara", widget: "string" }
+          - { label: "Batas Selatan", name: "batasSelatan", widget: "string" }
+          - { label: "Batas Barat", name: "batasBarat", widget: "string" }
+          - { label: "Batas Timur", name: "batasTimur", widget: "string" }
+          - { label: "Judul Infrastruktur", name: "infrastrukturJudul", widget: "string" }
+          - { label: "Nama Kepala Desa", name: "kepalaDesaNama", widget: "string" }
+          - { label: "Teks Tambahan Infrastruktur", name: "infrastrukturTeksTambahan", widget: "text", required: false }
+  - name: "tema"
+    label: "Tema"
+    files:
+      - name: "tema-data"
+        label: "Tema"
+        file: "data/tema.json"
+        format: json
+        fields:
+          - { label: "Aktif", name: "aktif", widget: "select", options: ["toba-klasik", "senja-samosir", "hijau-pertanian", "monokrom-elegan", "custom"] }
+          - label: "Warna Kustom"
+            name: "customAktif"
+            widget: "object"
+            fields:
+              - { label: "Navy", name: "navy", widget: "string", required: false }
+              - { label: "Teal", name: "teal", widget: "string", required: false }
+              - { label: "Sand", name: "sand", widget: "string", required: false }
+              - { label: "Ulos Red", name: "ulosRed", widget: "string", required: false }
+              - { label: "Ulos Gold", name: "ulosGold", widget: "string", required: false }

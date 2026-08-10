@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Website resmi Desa Tomok Parsaoran, Samosir — informasi wisata, peta lokasi akurat, UMKM, dan homestay di gerbang budaya Danau Toba." />
+  <meta name="keywords" content="Desa Tomok Parsaoran, Tomok Samosir, wisata Danau Toba, Makam Raja Sidabutar, homestay Tomok Parsaoran, UMKM Tomok Parsaoran" />
+  <meta property="og:title" content="Desa Tomok Parsaoran — Gerbang Budaya Pulau Samosir" />
+  <meta property="og:description" content="Info wisata, peta lokasi, UMKM, dan homestay Desa Tomok Parsaoran, tepi Danau Toba." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="id_ID" />
+  <title>Desa Tomok Parsaoran — Kec. Simanindo, Kab. Samosir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/tema-data.js"></script>
+  <script src="js/tema.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    "name": "Desa Tomok Parsaoran",
+    "description": "Desa wisata budaya Batak Toba di tepi Danau Toba, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara. Dikenal dengan Makam Raja Sidabutar, Museum Batak, tari Sigale-gale, dan pasar suvenir.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tomok",
+      "addressRegion": "Sumatera Utara",
+      "postalCode": "22395",
+      "addressCountry": "ID"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 2.6495,
+      "longitude": 98.8615
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#top" class="brand">
+        <span class="brand-name">Desa <em>Tomok Parsaoran</em></span>
+        <span class="brand-sub">Kec. Simanindo &middot; Kab. Samosir</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="active">Beranda</a>
+        <div class="nav-item has-sub">
+          <a href="profil.html">Profil</a>
+          <div class="sub-menu">
+            <a href="profil.html#sejarah">Sejarah</a>
+            <a href="profil.html#peta">Peta</a>
+            <a href="profil.html#demografi">Demografi</a>
+            <a href="profil.html#infrastruktur">Infrastruktur</a>
+          </div>
+        </div>
+        <a href="struktur.html">Struktur Desa</a>
+        <a href="wisata.html">Wisata</a>
+        <a href="pemandangan.html">Spot Foto</a>
+        <a href="berita.html">Berita</a>
+        <a href="umkm.html">UMKM</a>
+        <a href="homestay.html">Homestay</a>
+        <a href="kegiatan-kkn.html">Kegiatan KKN</a>
+        <a href="saran.html">Saran</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Gerbang Budaya Pulau Samosir</p>
+        <h1 class="hero-title">Desa<br><em>Tomok Parsaoran</em></h1>
+        <p class="hero-desc">Makam Raja Sidabutar, Museum Batak, pasar suvenir, dan tari Sigale-gale menjadi daya tarik utama Tomok Parsaoran di tepi Danau Toba.</p>
+        <a href="profil.html" class="hero-cta">Lihat Peta &amp; Info Wisata
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3.5 9L8 13.5 12.5 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="ulos-band" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===== INFO PRAKTIS ===== -->
+    <section class="info-praktis">
+      <div class="container info-grid">
+        <div class="info-item">
+          <span class="info-label">Akses</span>
+          <p>Medan &rarr; Parapat (&plusmn;4&ndash;5 jam) &rarr; feri Ajibata&ndash;Tomok</p>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Jam Operasional</span>
+          <p>&plusmn;06.00&ndash;18.00 WIB setiap hari</p>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Tiket Masuk</span>
+          <p>Mulai &plusmn;Rp10.000/orang</p>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Waktu Terbaik</span>
+          <p>Mei &ndash; Agustus (cuaca cerah)</p>
+        </div>
+      </div>
+      <p class="info-disclaimer">Informasi di halaman ini disusun untuk membantu wisatawan mengenal Tomok Parsaoran lebih dekat, mulai dari akses, destinasi, hingga pengalaman menginap dan berbelanja.</p>
+      <div class="ulos-band" aria-hidden="true"></div>
+    </section>
+
+    <section class="story-section">
+      <div class="story-overlay" aria-hidden="true"></div>
+      <div class="container story-content">
+        <p class="story-eyebrow">Menggali Cerita &amp; Potensi Tersembunyi</p>
+        <h2 class="story-title">Wisata di Desa Tomok Parsaoran</h2>
+        <blockquote class="story-quote">“Di balik setiap sudut destinasi, selalu ada cerita yang membuatnya layak untuk dikenang.”</blockquote>
+        <p>Tomok Parsaoran — Pengembangan Website Resmi Desa Wisata Tomok Parsaoran kini memasuki babak baru yang lebih mendalam. Bukan sekadar mengumpulkan data di balik meja, Tim KKN turun langsung berdiskusi dan menggali akar budaya bersama garis depan penggerak pariwisata lokal: Kelompok Sadar Wisata (Pokdarwis) Desa Tomok Parsaoran.</p>
+        <p>Melalui ruang dengar dan diskusi intim ini, potret utuh Tomok Parsaoran — mulai dari sejarah magis leluhur, denyut tata kelola, hingga mimpi-mimpi besar masa depan — terhampar dengan begitu hidup.</p>
+        <p class="story-highlight">Pilihan Akomodasi di Desa Tomok Parsaoran</p>
+        <p>Untuk mendukung kenyamanan wisatawan yang berkunjung, Desa Tomok Parsaoran menyediakan berbagai pilihan akomodasi yang dapat disesuaikan dengan kebutuhan pengunjung. Mulai dari penginapan, guest house, hingga homestay milik masyarakat lokal, wisatawan dapat menikmati pengalaman menginap dengan suasana khas kawasan Danau Toba.</p>
+        <a href="wisata.html" class="story-button">Lihat Menu Wisata</a>
+        <p class="story-subtext">Beberapa pilihan akomodasi yang tersedia di Desa Tomok Parsaoran antara lain: Royal Toba Inn Tomok–Samosir, Marina Homestay, Penginapan Poda Nauli, Penginapan Christy, Penginapan Hamidah, Penginapan Axel, Penginapan Roganda, Penginapan Torang, Uniqdo Inn, Unedo Homestay, Homestay Lumban Silalahi, KSPN / Linda Homestay.</p>
+        <a href="homestay.html" class="story-button story-button--secondary">Lihat Homestay</a>
+      </div>
+    </section>
+
+    <div class="ulos-band" aria-hidden="true"></div>
+
+    <!-- ===== KOMENTAR & SARAN ===== -->
+    <section class="saran" id="saran">
+      <div class="container">
+        <p class="eyebrow center">Masukan Wisatawan &amp; Warga</p>
+        <h2 class="section-title center">Komentar &amp; Saran</h2>
+        <p class="section-lead">Ada masukan, koreksi info, atau pengalaman selama di Tomok Parsaoran? Kabari kami lewat salah satu cara berikut.</p>
+
+        <div class="saran-grid">
+          <a href="https://wa.me/6282161196150?text=Halo%2C%20saya%20mau%20kasih%20saran%20untuk%20website%20Desa%20Tomok%20Parsaoran%3A%20" target="_blank" rel="noopener" class="saran-card">
+            <span class="saran-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5 8.4 8.4 0 01-4-.98L3 20l1.05-3.5A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Kirim lewat WhatsApp</h3>
+            <p>Paling cepat direspons — langsung ke Sekretaris Desa.</p>
+          </a>
+
+          <a href="saran.html" class="saran-card saran-card--form">
+            <span class="saran-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9l-6-6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v6h6M9 13h6M9 17h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Isi Formulir</h3>
+            <p>Langsung buka halaman saran dan kirim masukan Anda.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="ulos-band ulos-band--top" aria-hidden="true"></div>
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <img src="assets/images/logo samosir.png" alt="Logo Kabupaten Samosir" class="footer-logo">
+        <span class="brand-name">Desa <em>Tomok Parsaoran</em></span>
+        <p>Tomok Parsaoran, Kec. Simanindo<br>Kab. Samosir, Sumut, 22395</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Pemerintah Desa</h4>
+        <p>Pj. Kades Tomok Parsaoran: Eva Erika Hutagalung</p>
+        <p><a href="https://wa.me/6282161196150" target="_blank" rel="noopener">0821-6119-6150</a> (via Sekretaris Desa)</p>
+        <p><small>Email &amp; domain resmi belum tersedia.</small></p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Kontak Darurat</h4>
+        <p>Call Center POLRES (110)</p>
+        <p>Ambulans / PSC (119)</p>
+        <p>Pemadam Kebakaran (113)</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Jelajahi</h4>
+        <p><a href="https://samosirkab.go.id/" target="_blank" rel="noopener">Kab. Samosir</a></p>
+        <p><a href="https://kemendesa.go.id/" target="_blank" rel="noopener">Kemendesa</a></p>
+        <p><a href="https://cekdptonline.kpu.go.id/" target="_blank" rel="noopener">Cek DPT Online</a></p>
+      </div>
+      <div class="footer-col footer-unimed">
+        <img src="assets/images/LOGO KAMPUS.png" alt="Logo Kampus" class="footer-logo footer-logo--unimed">
+        <span class="brand-name">KKN <em>Tomok Parsaoran</em></span>
+        <p class="footer-unimed-text"><strong>KELOMPOK 1 &amp; 2</strong></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Website Desa Tomok Parsaoran  &middot; Data lokasi terverifikasi via Google Maps &middot; <a href="kelola.html">Kelola Konten</a></p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/lokasi-data.js"></script>
+  <script src="js/struktur-data.js"></script>
+  <script src="js/berita-data.js"></script>
+  <script src="js/kegiatan-data.js"></script>
+  <script src="js/profil-data.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/sheets-sync.js"></script>
+  <script src="js/firebase-sync.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
