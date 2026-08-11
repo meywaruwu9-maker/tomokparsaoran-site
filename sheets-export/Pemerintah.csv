@@ -1,0 +1,10 @@
+id,parent,jabatan,nama,foto,gabung_dengan
+kades,,"Pj. Kepala Desa","Eva Erika Hutagalung",,
+sekdes,kades,"Sekretaris Desa","Asima Rotua H. Silalahi",,
+kaur-umum,sekdes,"Kaur Umum & Perencanaan","Tumbur H. Sidabutar",,
+kaur-keuangan,sekdes,"Kaur Keuangan","Anna Romince Sidabutar",,
+kasi-pemerintahan,kades,"Kasi Pemerintahan","Edisma Simbolon",,
+kasi-kesejahteraan,kades,"Kasi Kesejahteraan & Pelayanan","Santika P. Sitinjak",,
+kadus1,kades,"Kepala Dusun I","Ober J. Siahaan",,
+kadus2,kades,"Kepala Dusun II","Jonni Tamba",,
+kadus3,kades,"Kepala Dusun III","Togar P. Sitanggang",,

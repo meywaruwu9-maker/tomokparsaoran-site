@@ -1,0 +1,9 @@
+id,parent,jabatan,nama,foto,gabung_dengan
+ketua-bpd,,"Ketua","Hongli Hamonangan Sidabutar",,waket-bpd
+waket-bpd,,"Wakil Ketua","Rita Junely Sinurat",,ketua-bpd
+sekretaris-bpd,ketua-bpd,"Sekretaris","Lando Harianja",,
+anggota-bpd,ketua-bpd,"Anggota","",,
+anggota-bpd-1,anggota-bpd,"","Maraden Sitanggang",,
+anggota-bpd-2,anggota-bpd,"","Demson Samosir",,
+anggota-bpd-3,anggota-bpd,"","Kamron Simbolon",,
+anggota-bpd-4,anggota-bpd,"","Paudi Jekson Sidabutar",,

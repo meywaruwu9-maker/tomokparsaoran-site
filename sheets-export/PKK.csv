@@ -1,0 +1,7 @@
+id,parent,jabatan,nama,foto,gabung_dengan
+ketua-pkk,,"Ketua","Ny. Katarina H. Sidabutar",,wakil-pkk
+wakil-pkk,,"Wakil Ketua","Rosinda Sinaga",,ketua-pkk
+penasehat-pkk,ketua-pkk,"Penasehat","Pj. Kepala Desa",,
+pembina-pkk,ketua-pkk,"Dewan Pembina","Pj. Kepala Desa Tomok Parsaoran",,
+sekretaris-pkk,ketua-pkk,"Sekretaris","Arnita Silalahi",,
+bendahara-pkk,ketua-pkk,"Bendahara","Jusmawati Silalahi",,

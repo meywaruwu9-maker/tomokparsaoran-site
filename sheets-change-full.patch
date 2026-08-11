@@ -1,0 +1,182 @@
+diff --git a/js/sheets-sync.js b/js/sheets-sync.js
+--- a/js/sheets-sync.js
++++ b/js/sheets-sync.js
+@@
+-const SHEETS_CONFIG = {
+-  AKTIF: false,
+-  SPREADSHEET_ID: '' // contoh: '1A2B3C4D5E6F7G8H9I0J'
+-};
++const SHEETS_CONFIG = {
++  AKTIF: true,
++  SPREADSHEET_ID: '1eQIJaPdaiNtX3a0Oem0WIEm0-2nExcJDqCL-2KoBpfI' // diisi dari URL Google Sheets Anda
++};
+diff --git a/sheets-export/Wisata.csv b/sheets-export/Wisata.csv
+new file mode 100644
+--- /dev/null
++++ b/sheets-export/Wisata.csv
+@@
++nama,lat,lng,alamat,deskripsi,rating,foto,placeId
++"Makam Raja Sidabutar",2.6513151,98.8605820,"Tomok, Kec. Simanindo, Kab. Samosir","Kompleks makam batu berusia ratusan tahun, dipahat dari satu batu utuh dan dijaga oleh patung-patung batu khas Batak.",4.4,,"ChIJdfiog5TpMTARipaytZUBLsQ"
++"Museum Batak Tomok",2.6506312,98.8601052,"Tomok, Kec. Simanindo, Kab. Samosir","Museum di dalam rumah adat Batak (Rumah Bolon) berisi koleksi tekstil, ukiran, senjata, dan miniatur rumah adat.",4.3,,"ChIJ__0XkZTpMTARSHs4bOtQ86c"
++"Pasar Tomok",2.6535511,98.8608324,"Tomok, Kec. Simanindo, Kab. Samosir","Pusat oleh-oleh dan kuliner khas Samosir — ulos, ukiran kayu, hingga jajanan lokal, tepat di dekat pelabuhan.",4.4,,"ChIJcT998pPpMTAR-DMR2FYpvxQ"
++"Pelabuhan Tomok",2.6551659,98.8579729,"Jl. Pelabuhan Tomok, Kec. Simanindo, Kab. Samosir","Gerbang utama wisatawan — titik sandar kapal feri dari Ajibata/Parapat menuju Pulau Samosir.",,,"ChIJh_UN-fDpMTARD6HfNTv8lXI"
++
+diff --git a/sheets-export/Pemandangan.csv b/sheets-export/Pemandangan.csv
+new file mode 100644
+--- /dev/null
++++ b/sheets-export/Pemandangan.csv
+@@
++nama,lat,lng,alamat,deskripsi,rating,foto,placeId
++"Parhallow Viewpoint & Coffee Shop",2.6173738,98.8723285,"Jalur Tomok–Tuktuk, Kec. Simanindo, Kab. Samosir","Spot foto & kedai kopi dengan pemandangan Danau Toba dan lalu-lalang feri Tomok–Parapat, ±10 menit dari pusat Tomok.",4.6,,"ChIJpfLShlDoMTARgD5-7ELQr2c"
++"Air Terjun Sigarattung (Sampuran Na Pitu)",2.6100738,98.8641736,"Jalur Tomok–Tuktuk, Kec. Simanindo, Kab. Samosir","Air terjun tepi jalan, bisa difoto langsung dari pinggir jalan tanpa perlu trekking.",4.5,,"ChIJVTaq1kPoMTARYcelLVPIiOg"
++
+diff --git a/sheets-export/UMKM.csv b/sheets-export/UMKM.csv
+new file mode 100644
+--- /dev/null
++++ b/sheets-export/UMKM.csv
+@@
++nama,lat,lng,alamat,deskripsi,kontak,rating,foto,placeId
++"Parna Jaya Souvenir Shop",2.6520683,98.8621802,"Jl. Pasar Baru, Tomok, Kec. Simanindo","Kios oleh-oleh khas Batak — kain ulos, ukiran, dan aksesoris. Harga bisa ditawar.","0821-6757-8771",3.3,,"ChIJLReJiKnpMTARkgBhktZyQ24"
++
+diff --git a/sheets-export/Homestay.csv b/sheets-export/Homestay.csv
+new file mode 100644
+--- /dev/null
++++ b/sheets-export/Homestay.csv
+@@
++nama,lat,lng,alamat,deskripsi,kontak,rating,foto,placeId
++"UNIQDO INN Tomok",2.6454491,98.8544130,"Parsaoran, Jl. Sigambal, Tomok","Homestay dengan suasana tenang, dekat pelabuhan dan pasar suvenir, cocok untuk keluarga/rombongan.","0821-6601-8014",4.9,,"ChIJ0a74fkrpMTAR-L36FisdbSU"
++"LOPO Hotel & Resort",2.6490273,98.8662984,"Jl. Horas No.1, Tomok","Hotel dengan lokasi dekat pelabuhan, kamar bersih, dan pelayanan ramah.","0851-8606-2243",4.5,,"ChIJRwSMVpbpMTARMoB2Idkl9UQ"
++"Hotel Gondang Sivali",2.6447931,98.8684484,"Jl. Pulau Samosir, Tomok","Akomodasi dengan pemandangan danau, tersedia fasilitas boat dan jet ski.",,,4.9,"ChIJKzNUOr3pMTARcrA3rpK_Khg"
++"Toba Retreat Mansion & Villas",2.6380585,98.8736038,"Tomok, Kec. Simanindo","Vila dengan kolam infinity dan pemandangan Danau Toba, cocok untuk yang mencari privasi.","0882-0160-40001",4.4,,"ChIJlWTjwKXpMTARAQldL5xQNN4"
++
+diff --git a/sheets-export/Pemerintah.csv b/sheets-export/Pemerintah.csv
+new file mode 100644
+--- /dev/null
++++ b/sheets-export/Pemerintah.csv
+@@
++id,parent,jabatan,nama,foto,gabung_dengan
++kades,,"Pj. Kepala Desa","Eva Erika Hutagalung",,
++sekdes,kades,"Sekretaris Desa","Asima Rotua H. Silalahi",,
++kaur-umum,sekdes,"Kaur Umum & Perencanaan","Tumbur H. Sidabutar",,
++kaur-keuangan,sekdes,"Kaur Keuangan","Anna Romince Sidabutar",,
++kasi-pemerintahan,kades,"Kasi Pemerintahan","Edisma Simbolon",,
++kasi-kesejahteraan,kades,"Kasi Kesejahteraan & Pelayanan","Santika P. Sitinjak",,
++kadus1,kades,"Kepala Dusun I","Ober J. Siahaan",,
++kadus2,kades,"Kepala Dusun II","Jonni Tamba",,
++kadus3,kades,"Kepala Dusun III","Togar P. Sitanggang",,
++
+diff --git a/sheets-export/BPD.csv b/sheets-export/BPD.csv
+new file mode 100644
+--- /dev/null
++++ b/sheets-export/BPD.csv
+@@
++id,parent,jabatan,nama,foto,gabung_dengan
++ketua-bpd,,"Ketua","Hongli Hamonangan Sidabutar",,waket-bpd
++waket-bpd,,"Wakil Ketua","Rita Junely Sinurat",,ketua-bpd
++sekretaris-bpd,ketua-bpd,"Sekretaris","Lando Harianja",,
++anggota-bpd,ketua-bpd,"Anggota","",,
++anggota-bpd-1,anggota-bpd,"","Maraden Sitanggang",,
++anggota-bpd-2,anggota-bpd,"","Demson Samosir",,
++anggota-bpd-3,anggota-bpd,"","Kamron Simbolon",,
++anggota-bpd-4,anggota-bpd,"","Paudi Jekson Sidabutar",,
++
+diff --git a/sheets-export/PKK.csv b/sheets-export/PKK.csv
+new file mode 100644
+--- /dev/null
++++ b/sheets-export/PKK.csv
+@@
++id,parent,jabatan,nama,foto,gabung_dengan
++ketua-pkk,,"Ketua","Ny. Katarina H. Sidabutar",,wakil-pkk
++wakil-pkk,,"Wakil Ketua","Rosinda Sinaga",,ketua-pkk
++penasehat-pkk,ketua-pkk,"Penasehat","Pj. Kepala Desa",,
++pembina-pkk,ketua-pkk,"Dewan Pembina","Pj. Kepala Desa Tomok Parsaoran",,
++sekretaris-pkk,ketua-pkk,"Sekretaris","Arnita Silalahi",,
++bendahara-pkk,ketua-pkk,"Bendahara","Jusmawati Silalahi",,
++
+diff --git a/sheets-export/Pokja.csv b/sheets-export/Pokja.csv
+new file mode 100644
+--- /dev/null
++++ b/sheets-export/Pokja.csv
+@@
++kelompok,peran,nama,foto
++"POKJA I","Ketua","Rumondang Sidabutar",
++"POKJA I","","Roslina Manurung",
++"POKJA I","","Erni Nainggolan",
++"POKJA I","","Netti Tarigan",
++"POKJA I","","Asima Rotua H. Silalahi",
++"POKJA II","Ketua","Rusinda Sigiro",
++"POKJA II","","Nursawati Sinaga",
++"POKJA II","","Marintansia Sidabutar",
++"POKJA II","","Jenni Sinaga",
++"POKJA II","","Labora Sitinjak",
++"POKJA III","Ketua","Santika Sitinjak",
++"POKJA III","","Norita Tuhumuri",
++"POKJA III","","Ermauli Situmorang",
++"POKJA III","","Romanti Tanjung",
++"POKJA III","","Hetti Sidabutar",
++"POKJA IV","Ketua","Nurhayati",
++"POKJA IV","","Rumedi Simanjuntak",
++"POKJA IV","","Herlina Nainggolan",
++"POKJA IV","","Rediana Situmorang",
++"POKJA IV","","Anna Sidabutar",
++
+diff --git a/sheets-export/Berita.csv b/sheets-export/Berita.csv
+new file mode 100644
+--- /dev/null
++++ b/sheets-export/Berita.csv
+@@
++judul,tanggal,ringkasan,isi,foto,terbit
++
+diff --git a/sheets-export/Kegiatan.csv b/sheets-export/Kegiatan.csv
+new file mode 100644
+--- /dev/null
++++ b/sheets-export/Kegiatan.csv
+@@
++judul,kategori,deskripsi,foto,tanggal,terbit
++"Penyuluhan Pendidikan di SD Swasta Assisi Tomok Parsaoran","Pendidikan","Kunjungan perdana ke SD Swasta Assisi Tomok Parsaoran.","D:\\KKN PDD\\IMG_20260801_221726_926.jpg.jpeg","2026-07-01",ya
++"Kegiatan Bersama Aparat Desa Tomok Parsaoran","Sosial","Momen kebersamaan Kelompok KKN 1 & 2 bersama Aparat Desa.","D:\\KKN PDD\\IMG_20260801_220741_118.jpg.jpeg","2026-07-01",ya
++
+diff --git a/sheets-export/KegiatanKKN.csv b/sheets-export/KegiatanKKN.csv
+new file mode 100644
+--- /dev/null
++++ b/sheets-export/KegiatanKKN.csv
+@@
++judul,kategori,deskripsi,foto,tanggal,terbit
++"Penyuluhan Pendidikan di SD Swasta Assisi Tomok Parsaoran","Pendidikan","Kunjungan perdana ke SD Swasta Assisi Tomok Parsaoran.","D:\\KKN PDD\\IMG_20260801_221726_926.jpg.jpeg","2026-07-01",ya
++"Kegiatan Bersama Aparat Desa Tomok Parsaoran","Sosial","Momen kebersamaan Kelompok KKN 1 & 2 bersama Aparat Desa.","D:\\KKN PDD\\IMG_20260801_220741_118.jpg.jpeg","2026-07-01",ya
++
+diff --git a/sheets-export/README.md b/sheets-export/README.md
+new file mode 100644
+--- /dev/null
++++ b/sheets-export/README.md
+@@
++Langkah impor CSV ke Google Sheets (ikuti PANDUAN-GOOGLE-SHEETS.md):
++
++1. Buka Google Sheets kosong atau sheet yang sudah Anda buat untuk website.
++2. Pastikan sheet dibagikan sebagai "Anyone with the link — Viewer".
++3. Untuk setiap CSV di folder ini, buat tab baru di Google Sheets dengan NAMA TAB yang persis seperti di bawah:
++   - Wisata
++   - UMKM
++   - Homestay
++   - Pemandangan
++   - Berita
++   - KegiatanKKN
++   - Profil
++   - Pemerintah
++   - BPD
++   - PKK
++   - Pokja
++
++4. Untuk setiap tab: klik menu `File` → `Import` → `Upload` → pilih file CSV terkait.
++   - Pilih opsi `Replace data at selected sheet` (atau jika tab baru, pilih `Create new sheet`).
++   - Pastikan baris pertama CSV tetap ada (judul kolom) dan tidak terhapus.
++
++5. Setelah semua tab terisi, buka `js/sheets-sync.js` dan pastikan `SHEETS_CONFIG.SPREADSHEET_ID` berisi ID dari URL Google Sheets Anda.
++   Contoh URL: `https://docs.google.com/spreadsheets/d/<SPREADSHEET_ID>/edit`
++
++6. Refresh website (CTRL+F5). Jika sukses, console browser akan menampilkan `[sheets-sync]` hasil muat. Jika sebagian tab gagal, website tetap pakai data lokal untuk tab yang gagal.
++
++Catatan:
++- Nama kolom harus sesuai dengan header CSV; jangan ubah nama kolom kecuali Anda juga menyesuaikan `js/sheets-sync.js`.
++- Untuk upload cepat, Anda juga bisa `Import` dan memilih opsi `Replace current sheet` pada tab yang sesuai.
++

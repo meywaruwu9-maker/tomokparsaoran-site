@@ -1,0 +1,14 @@
+*** Begin Patch
+*** Add File: js/sheets-sync.js.patch
++*** Update File: js/sheets-sync.js
++@@
++-const SHEETS_CONFIG = {
+-  AKTIF: false,
+-  SPREADSHEET_ID: '' // contoh: '1A2B3C4D5E6F7G8H9I0J'
+-};
++const SHEETS_CONFIG = {
++  AKTIF: true,
++  SPREADSHEET_ID: '1eQIJaPdaiNtX3a0Oem0WIEm0-2nExcJDqCL-2KoBpfI' // diisi dari URL Google Sheets Anda
++};
++
+*** End Patch
