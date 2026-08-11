@@ -1,8 +1,7 @@
 backend:
-  name: github
-  repo: "USERNAME/REPO"
-  branch: "main"
-  auth_scope: "repo"
+  name: git-gateway
+  repo: "git-gateway"
+  branch: "main" 
   open_authoring: false
   use_graphql: false
   local_backend: true
