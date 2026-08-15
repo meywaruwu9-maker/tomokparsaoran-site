@@ -101,8 +101,13 @@ function initSaranForm() {
    baru jatuh ke koordinat lat/lng.
    ========================================================= */
 function tautanMaps(lokasi) {
-  if (lokasi.placeId) {
-    return `https://www.google.com/maps/place/?q=place_id:${lokasi.placeId}`;
+  const placeId = (lokasi.placeId || '').trim();
+  if (placeId) {
+    // Format resmi Google Maps URL API: butuh "query" (nama tempat sbg fallback teks)
+    // DAN "query_place_id" (Place ID asli) supaya akurat dibuka di app Maps mobile,
+    // bukan cuma di browser desktop. Referensi:
+    // https://developers.google.com/maps/documentation/urls/get-started#search-action
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(lokasi.nama)}&query_place_id=${placeId}`;
   }
   return `https://www.google.com/maps/search/?api=1&query=${lokasi.lat},${lokasi.lng}`;
 }

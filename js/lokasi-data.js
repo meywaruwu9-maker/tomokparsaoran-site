@@ -131,14 +131,15 @@ Tidak hanya sebagai tempat berbelanja, Pasar Tomok menjadi ruang pertemuan antar
     },
     {
       nama: "Sigale-Gale Pertama Di Tomok",
-      lat: 26.473673,
+      lat: 2.6473673,
       lng: 98.8596516,
       alamat: "Jalur Tomok Parsaoran, Kec. Simanindo, Kab. Samosir",
       deskripsi: "SIgale gale pertama di desa tomok parsaoran.",
       rating: 4.6,
-      placeId:"ChIJny4DfwDpMTARLJoR6xHHbuU",
       foto: "assets/images/wisata/Sigale gale/Patung-Sigale-Gale-Patung-Bersejarah-Di-Tomok-Danau-Toba.jpeg",
-      Link : "https://www.google.com/maps/search/?api=1&query=2.6517728,98.8607769"
+      getGoogleMapsLink: function(lat, lng) {
+        return `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+    }
     }
   ],
 
@@ -193,6 +194,6 @@ Tidak hanya sebagai tempat berbelanja, Pasar Tomok menjadi ruang pertemuan antar
       kontak: "0823-7253-7375",
       rating: 5.0,
       placeId: " ChIJp_a0AYvpMTARw_N7r6sXroA"
-    }
+    },
   ]
 };
