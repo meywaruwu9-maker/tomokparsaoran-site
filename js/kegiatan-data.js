@@ -61,7 +61,8 @@ const kegiatanData = [
        "assets/images/Kegiatan K2/Asisis2.jpg",
        "assets/images/Kegiatan K2/asisi4.jpg",
        "assets/images/Kegiatan K2/Asisi3.jpg",
-       "assets/images/Kegiatan K2/assisi5.jpg"
+       "assets/images/Kegiatan K2/assisi5.jpg",
+      "assets/images/pemerintahan/photo_2026-08-10_09-46-34.jpg"
      ],
      terbit: true
   },

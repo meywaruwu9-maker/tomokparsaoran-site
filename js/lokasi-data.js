@@ -126,7 +126,7 @@ Tidak hanya sebagai tempat berbelanja, Pasar Tomok menjadi ruang pertemuan antar
       alamat: "Jalur Tomok parsaoran, Kec. Simanindo, Kab. Samosir",
       deskripsi: "Spot foto Dengan patung sigale-gale.",
       rating: 4.5,
-      placeId: " ChIJZXlZeZPpMTARVXsbUHFqV0I",
+      placeId: "ChIJZXlZeZPpMTARVXsbUHFqV0I",
       foto: "D:\\KKN PDD\\unnamed.jpg"
     },
     {
@@ -138,7 +138,7 @@ Tidak hanya sebagai tempat berbelanja, Pasar Tomok menjadi ruang pertemuan antar
       rating: 4.6,
       placeId:"ChIJny4DfwDpMTARLJoR6xHHbuU",
       foto: "assets/images/wisata/Sigale gale/Patung-Sigale-Gale-Patung-Bersejarah-Di-Tomok-Danau-Toba.jpeg",
-      Link : "https://www.google.com/maps/place/Sigale-Gale+Pertama+Di+Tomok/@2.6517728,98.8607769,17z/data=!3m1!4b1!4m6!3m5!1s0x3031f7e7c0d8a9f5:0x6e2b8c3e5f5e5f5e!8m2!3d2.6517728!4d98.8607769!16s%2Fg%2F11c4v_6k7p"
+      Link : "https://www.google.com/maps/search/?api=1&query=2.6517728,98.8607769"
     }
   ],
 
