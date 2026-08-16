@@ -107,7 +107,40 @@ Tidak hanya sebagai tempat berbelanja, Pasar Tomok menjadi ruang pertemuan antar
       kontak: "null",
       rating: 4.9,
       placeId: "ChIJPbmCTwDpMTARScfeGyAhZHM",
-      foto :"C:\\Users\\LENOVO\\OneDrive\\Pictures\\Screenshots\\Screenshot 2026-08-02 145956.png"
+      foto :"assets/images/umkm/Screenshot 2026-08-02 145956.png"
+       },
+    {
+      nama: "Gubuk Coffee",
+      lat: 2.6524555,
+      lng: 98.8615606,
+      alamat: "Jl. Horas, Tomok, Simanindo, Kabupaten Samosir, Sumatera Utara 22395",
+      deskripsi: "Tempat ngopi asik di Tomok. Kami memesan menu samosir latte dan kopi susu gula aren.",
+      kontak: "null",
+      rating: 5.0,
+      placeId: "ChIJIc5pzf3pMTARGMlTPl9ygNQ",
+      foto : "assets/images/umkm/Gubuk coffe.jpeg",
+       },
+    {
+      nama: "Pasar Tomok",
+      lat: 2.6535511,
+      lng: 98.8582575,
+      alamat: "MV36+C8G, Tomok, Simanindo, Kabupaten Samosir, Sumatera Utara 22395",
+      deskripsi: "Tempat membeli baju dengan harga terjangkau serta suvenir untuk dibawa pulang.",
+      kontak: "null",
+      rating: 5.0,
+      placeId: " ChIJcT998pPpMTAR-DMR2FYpvxQ",
+      foto : "assets/images/umkm/Pasar Tomok.jpeg",
+       },
+    {
+      nama: "Warkop AIO",
+      lat: 2.6523568,
+      lng: 98.8619168,
+      alamat: "MV26+WQV, Jalan Besar Tomok Desa Tomok, Parsaoran, Simanindo, Kabupaten Samosir, Sumatera Utara 22395",
+      deskripsi: "Tempat untuk besantai sambil membeli suvenir khas tomok parsoaran.",
+      kontak: "null",
+      rating: 5.0,
+      placeId: "ChIJXVQfLsLpMTAR8j_n1yw3wSQ",
+      foto :"assets/images/umkm/Warkop AIO.jpeg"
        },
     // Tambah UMKM baru di sini. Contoh format lengkap ada di README.md.
   ],
@@ -136,6 +169,7 @@ Tidak hanya sebagai tempat berbelanja, Pasar Tomok menjadi ruang pertemuan antar
       alamat: "Jalur Tomok Parsaoran, Kec. Simanindo, Kab. Samosir",
       deskripsi: "SIgale gale pertama di desa tomok parsaoran.",
       rating: 4.6,
+      placeId: "ChIJgX0f5ZTpMTAR1j3k6r7J8xE",
       foto: "assets/images/wisata/Sigale gale/Patung-Sigale-Gale-Patung-Bersejarah-Di-Tomok-Danau-Toba.jpeg",
       getGoogleMapsLink: function(lat, lng) {
         return `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;

@@ -7,6 +7,19 @@
    ========================================================= */
 
 const kegiatanData = [
+   {
+     judul: "Momen Kebersamaaan Dengan DPL Sebelum Pergi ke Lokasi KKN",
+     kategori: "sosial",
+     kelompok: "Kelompok 2",
+     deskripsi: "Momen Mahasiswa KKN bersama DPL Sebelum menuju lokasi KKN.",
+     foto: [
+      "assets/images/Kegiatan K2/WhatsApp Image 2026-08-16 at 19.56.32.jpeg",
+       "assets/images/Kegiatan K2/WhatsApp Image 2026-08-16 at 19.56.30.jpeg",
+       "assets/images/Kegiatan K2/WhatsApp Image 2026-08-16 at 19.56.29.jpeg"
+     ],
+     terbit: true
+  },
+
   {
      judul: "Penyuluhan Pendidikan di SD Swasta Assisi Tomok Parsaoran",
      kategori: "Pendidikan",
